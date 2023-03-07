@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1158.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oosd.assignment.FXMLDocumentController">
+   <children>
+      <TabPane layoutX="241.0" layoutY="-86.0" prefHeight="481.0" prefWidth="876.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Admin Page">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="81.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Page" wrappingWidth="234.515625" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="30.0">
+                           <font>
+                              <Font name="Elephant" size="38.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="243.0" fitWidth="468.0" layoutX="759.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@table%20tennis.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="312.0" fitWidth="348.0" layoutX="911.0" layoutY="578.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0">
+                           <image>
+                              <Image url="@Table%20Tennis%20Silhouette.jpg" />
+                           </image>
+                        </ImageView>
+                        <VBox fx:id="adminFunctions" disable="true" layoutX="5.0" layoutY="122.0" prefHeight="640.0" prefWidth="587.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="80.0">
+                           <children>
+                              <AnchorPane prefHeight="176.0" prefWidth="841.0">
+                                 <children>
+                                    <TextField fx:id="teamNameEntry" layoutX="138.0" layoutY="62.0" onAction="#submitTeamButtonPushed" prefHeight="23.0" prefWidth="337.0" />
+                                    <Button fx:id="submitTeamName" layoutX="489.0" layoutY="62.0" mnemonicParsing="false" onAction="#submitTeamButtonPushed" text="Submit" />
+                                    <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a Team" underline="true" wrappingWidth="123.515625" AnchorPane.leftAnchor="10.0">
+                                       <font>
+                                          <Font name="Franklin Gothic Medium Cond" size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="14.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Team Name:" wrappingWidth="123.515625" AnchorPane.leftAnchor="10.0">
+                                       <font>
+                                          <Font name="Franklin Gothic Medium Cond" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Label fx:id="TeamLabel" layoutX="293.0" layoutY="109.0" prefHeight="25.0" prefWidth="187.0" textFill="RED" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="176.0" prefWidth="841.0">
+                                 <children>
+                                    <TextField fx:id="playerNameEntry" layoutX="145.0" layoutY="62.0" onAction="#submitPlayerButtonPushed" prefHeight="37.0" prefWidth="246.0" />
+                                    <Button fx:id="submitplayerName" layoutX="491.0" layoutY="115.0" mnemonicParsing="false" onAction="#submitPlayerButtonPushed" text="Submit" />
+                                    <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a Player" underline="true" wrappingWidth="123.515625" AnchorPane.leftAnchor="10.0">
+                                       <font>
+                                          <Font name="Franklin Gothic Medium Cond" size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="8.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Player Name:" wrappingWidth="134.515625" AnchorPane.leftAnchor="10.0">
+                                       <font>
+                                          <Font name="Franklin Gothic Medium Cond" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <ComboBox fx:id="selectPlayerTeam" layoutX="449.0" layoutY="61.0" prefHeight="37.0" prefWidth="158.0" promptText="Select Team..." />
+                                    <Label fx:id="PlayerLabel" layoutX="232.0" layoutY="115.0" prefHeight="25.0" prefWidth="187.0" textFill="RED" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="176.0" prefWidth="841.0">
+                                 <children>
+                                    <Button fx:id="generateFixtures" layoutX="14.0" layoutY="72.0" mnemonicParsing="false" onAction="#generateFixturesButtonPressed" prefHeight="57.0" prefWidth="194.0" text="Generate Fixtures" AnchorPane.leftAnchor="10.0" />
+                                    <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generate Fixtures" underline="true" wrappingWidth="164.515625" AnchorPane.leftAnchor="10.0">
+                                       <font>
+                                          <Font name="Franklin Gothic Medium Cond" size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#f20404" layoutX="251.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: ALL PRE-EXISTING MATCH INFORMATION WILL BE REMOVED" wrappingWidth="321.515625">
+                                       <font>
+                                          <Font name="Franklin Gothic Medium Cond" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="251.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This will generate a match between all teams" wrappingWidth="398.515625">
+                                       <font>
+                                          <Font name="Franklin Gothic Medium Cond" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="176.0" prefWidth="841.0">
+                                 <children>
+                                    <Button fx:id="generateTeamStatistics" layoutX="410.0" layoutY="71.0" mnemonicParsing="false" onAction="#generateTeamStatsButtonPressed" text="Generate team stats " />
+                                    <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generate Team Statistics" underline="true" wrappingWidth="236.515625" AnchorPane.leftAnchor="10.0">
+                                       <font>
+                                          <Font name="Franklin Gothic Medium Cond" size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="14.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clicking this button will generate team statistics to be viewed in the Viewer Page (This also occurs every 100s)" wrappingWidth="368.515625" AnchorPane.leftAnchor="10.0">
+                                       <font>
+                                          <Font name="Franklin Gothic Medium Cond" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                        <TextField fx:id="passwordField" layoutX="709.0" layoutY="337.0" />
+                        <Button fx:id="submitPasswordButton" layoutX="920.0" layoutY="337.0" mnemonicParsing="false" onAction="#submitPasswordButtonPressed" text="Submit" />
+                        <Label fx:id="securityLabel" layoutX="708.0" layoutY="288.0" prefHeight="46.0" prefWidth="202.0" text="Enter password:">
+                           <font>
+                              <Font name="Elephant" size="19.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="lockButton" layoutX="865.0" layoutY="292.0" mnemonicParsing="false" onAction="#lockAdminPage" text="Lock" visible="false" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab text="Score Sheet">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="106.0" fitWidth="185.0" layoutX="959.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="11.0">
+                           <image>
+                              <Image url="@table%20tennis.jpg" />
+                           </image>
+                        </ImageView>
+                        <GridPane fx:id="scoreSheetGridPane" disable="true" hgap="5.0" layoutX="350.0" layoutY="223.0" prefHeight="438.0" prefWidth="794.0" vgap="5.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="115.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="271.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="510.0" minWidth="10.0" prefWidth="281.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="180.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="225.0" minHeight="10.0" prefHeight="137.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="170.0" minHeight="0.0" prefHeight="142.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="269.0" minHeight="10.0" prefHeight="162.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="finalScore" editable="false" prefHeight="115.0" prefWidth="331.0" text="Final Team Scores" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <children>
+                                    <TextField fx:id="game1" prefHeight="34.0" prefWidth="291.0" />
+                                    <TextField fx:id="game2" prefHeight="37.0" prefWidth="291.0" />
+                                    <TextField fx:id="game3" prefHeight="0.0" prefWidth="332.0" />
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField fx:id="game4" prefHeight="34.0" prefWidth="291.0" />
+                                    <TextField fx:id="game5" prefHeight="37.0" prefWidth="291.0" />
+                                    <TextField fx:id="game6" prefHeight="0.0" prefWidth="332.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <TextField fx:id="game7" prefHeight="21.0" prefWidth="291.0" />
+                                    <TextField fx:id="game8" prefHeight="37.0" prefWidth="291.0" />
+                                    <TextField fx:id="game9" prefHeight="0.0" prefWidth="332.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <children>
+                                    <TextField fx:id="game10" prefHeight="34.0" prefWidth="291.0" />
+                                    <TextField fx:id="game11" prefHeight="37.0" prefWidth="291.0" />
+                                    <TextField fx:id="game12" prefHeight="0.0" prefWidth="332.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <TextField fx:id="game13" prefHeight="34.0" prefWidth="291.0" />
+                                    <TextField fx:id="game14" prefHeight="37.0" prefWidth="291.0" />
+                                    <TextField fx:id="game15" prefHeight="0.0" prefWidth="332.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </VBox>
+                              <ComboBox fx:id="homePlayer1" prefHeight="37.0" prefWidth="175.0" promptText="Home Player 1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <ComboBox fx:id="homePlayer2" prefHeight="37.0" prefWidth="169.0" promptText="Home Player 2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="awayPlayer1" prefHeight="37.0" prefWidth="171.0" promptText="Away Player 1" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="awayPlayer2" prefHeight="37.0" prefWidth="169.0" promptText="Away Player 2" GridPane.rowIndex="2" />
+                              <Label fx:id="singleSetLabel" prefHeight="45.0" prefWidth="178.0" text="Single Sets">
+                                 <font>
+                                    <Font name="Elephant" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="doubleSetLabel" text="Double Set" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Elephant" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <Button fx:id="submitScoreSheet" disable="true" layoutX="349.0" layoutY="671.0" mnemonicParsing="false" onAction="#submitScoreSheetButtonPressed" prefHeight="37.0" prefWidth="795.0" text="Calculate and submit Scores" />
+                        <HBox layoutX="116.0" layoutY="154.0" prefHeight="37.0" prefWidth="339.0" spacing="40.0">
+                           <children>
+                              <ComboBox fx:id="homeTeam" onAction="#disableScoreSheet" prefWidth="150.0" promptText="Home Team" />
+                              <ComboBox fx:id="awayTeam" onAction="#disableScoreSheet" prefWidth="150.0" promptText="Away Team" />
+                           </children>
+                        </HBox>
+                        <VBox alignment="TOP_CENTER" layoutX="22.0" layoutY="312.0" prefHeight="153.0" prefWidth="234.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="createScoreSheet" mnemonicParsing="false" onAction="#createScoreSheetButtonPressed" prefHeight="100.0" prefWidth="234.0" text="Create a new Sheet" />
+                              <Button fx:id="modifyScoreSheet" mnemonicParsing="false" onAction="#ModifyScoreSheetButtonPressed" prefHeight="100.0" prefWidth="290.0" text="Modify Sheet" />
+                           </children>
+                        </VBox>
+                        <Label fx:id="scoreSheetTitleLabel" layoutX="189.0" layoutY="39.0" text="Score Sheet" underline="true">
+                           <font>
+                              <Font name="Elephant" size="38.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="enterScoresLabel" layoutX="515.0" layoutY="123.0" prefHeight="78.0" prefWidth="622.0">
+                           <font>
+                              <Font name="Elephant" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="selectATeamLabel" layoutX="178.0" layoutY="110.0" text="Please select the teams">
+                           <font>
+                              <Font name="Elephant" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="guideText" layoutX="22.0" layoutY="249.0" prefHeight="46.0" prefWidth="234.0" text="Select an option below:">
+                           <font>
+                              <Font name="Elephant" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Viewer Page">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="127.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Viewer Page" underline="true" wrappingWidth="244.515625" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="20.0">
+                           <font>
+                              <Font name="Elephant" size="38.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="243.0" fitWidth="468.0" layoutX="759.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@table%20tennis.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="430.0" fitWidth="499.0" layoutX="911.0" layoutY="578.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="1.0">
+                           <image>
+                              <Image url="@Table%20Tennis%20Silhouette.jpg" />
+                           </image>
+                        </ImageView>
+                        <HBox layoutX="30.0" layoutY="101.0" prefHeight="41.0" prefWidth="619.0" spacing="40.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="101.0">
+                           <children>
+                              <ComboBox fx:id="selectReport" onAction="#viewSelectedReport" prefHeight="37.0" prefWidth="300.0" promptText="Choose a report..." />
+                              <Button fx:id="viewReport" mnemonicParsing="false" onAction="#viewSelectedReport" prefHeight="37.0" prefWidth="91.0" text="Refresh" />
+                              <ComboBox fx:id="selectFixture" onAction="#showFixture" prefHeight="37.0" prefWidth="140.0" promptText="Fixture" visible="false" />
+                           </children>
+                        </HBox>
+                        <TextArea fx:id="reportTextArea" editable="false" layoutX="20.0" layoutY="163.0" prefHeight="553.0" prefWidth="595.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
